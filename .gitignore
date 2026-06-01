@@ -10,3 +10,4 @@ env/
 .streamlit/
 *.pdf
 *.txt
+!requirements.txt

@@ -1,0 +1,227 @@
+{
+  "id": "scenario-1",
+  "name": "Scenario 1 \u2014 Even Spacing",
+  "description": "Buses depart every 15 minutes in each direction starting 19:00. Baseline case.",
+  "route": {
+    "id": "route-01",
+    "name": "Bengaluru-Kochi Route",
+    "segments": [
+      {
+        "from_node": "Bengaluru",
+        "to_node": "A",
+        "distance_km": 100.0
+      },
+      {
+        "from_node": "A",
+        "to_node": "B",
+        "distance_km": 120.0
+      },
+      {
+        "from_node": "B",
+        "to_node": "C",
+        "distance_km": 100.0
+      },
+      {
+        "from_node": "C",
+        "to_node": "D",
+        "distance_km": 120.0
+      },
+      {
+        "from_node": "D",
+        "to_node": "Kochi",
+        "distance_km": 100.0
+      }
+    ]
+  },
+  "stations": [
+    {
+      "id": "A",
+      "name": "Station A",
+      "chargers_count": 1
+    },
+    {
+      "id": "B",
+      "name": "Station B",
+      "chargers_count": 1
+    },
+    {
+      "id": "C",
+      "name": "Station C",
+      "chargers_count": 1
+    },
+    {
+      "id": "D",
+      "name": "Station D",
+      "chargers_count": 1
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-BK-01",
+      "operator": "kpn",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-02",
+      "operator": "freshbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-03",
+      "operator": "flixbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:30",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-04",
+      "operator": "kpn",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:45",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-05",
+      "operator": "freshbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "20:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-06",
+      "operator": "flixbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "20:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-07",
+      "operator": "kpn",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "20:30",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-08",
+      "operator": "freshbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "20:45",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-09",
+      "operator": "flixbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "21:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-BK-10",
+      "operator": "kpn",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "21:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-01",
+      "operator": "freshbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-02",
+      "operator": "flixbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-03",
+      "operator": "kpn",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:30",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-04",
+      "operator": "freshbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:45",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-05",
+      "operator": "flixbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "20:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-06",
+      "operator": "kpn",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "20:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-07",
+      "operator": "freshbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "20:30",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-08",
+      "operator": "flixbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "20:45",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-09",
+      "operator": "kpn",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "21:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-KB-10",
+      "operator": "freshbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "21:15",
+      "priority": 1,
+      "max_range_km": 240.0
+    }
+  ],
+  "weights": {
+    "individual": 1.0,
+    "operator": 1.0,
+    "overall": 1.0
+  },
+  "charging_duration_mins": 25.0,
+  "travel_speed_kmh": 60.0
+}

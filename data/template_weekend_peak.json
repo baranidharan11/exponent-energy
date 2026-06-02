@@ -1,0 +1,41 @@
+{
+  "id": "template-weekend-peak",
+  "name": "Weekend Peak - High Density",
+  "description": "Weekend rush with doubled charger count at Stations B & C and tightly clustered bus departures.",
+  "route": {
+    "id": "route-01",
+    "name": "Bengaluru-Kochi Route",
+    "segments": [
+      {"from_node": "Bengaluru", "to_node": "A", "distance_km": 100.0},
+      {"from_node": "A", "to_node": "B", "distance_km": 120.0},
+      {"from_node": "B", "to_node": "C", "distance_km": 100.0},
+      {"from_node": "C", "to_node": "D", "distance_km": 120.0},
+      {"from_node": "D", "to_node": "Kochi", "distance_km": 100.0}
+    ]
+  },
+  "stations": [
+    {"id": "A", "name": "Station A", "chargers_count": 1},
+    {"id": "B", "name": "Station B", "chargers_count": 2},
+    {"id": "C", "name": "Station C", "chargers_count": 2},
+    {"id": "D", "name": "Station D", "chargers_count": 1}
+  ],
+  "buses": [
+    {"id": "bus-wk-01", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "18:00", "priority": 2, "max_range_km": 240.0},
+    {"id": "bus-wk-02", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "18:10", "priority": 1, "max_range_km": 240.0},
+    {"id": "bus-wk-03", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "18:15", "priority": 3, "max_range_km": 240.0},
+    {"id": "bus-wk-04", "operator": "kpn", "direction": "Bengaluru→Kochi", "departure_time": "18:30", "priority": 1, "max_range_km": 240.0},
+    {"id": "bus-wk-05", "operator": "freshbus", "direction": "Bengaluru→Kochi", "departure_time": "18:45", "priority": 2, "max_range_km": 240.0},
+    {"id": "bus-wk-06", "operator": "flixbus", "direction": "Bengaluru→Kochi", "departure_time": "19:00", "priority": 1, "max_range_km": 240.0},
+    {"id": "bus-wk-07", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "18:00", "priority": 1, "max_range_km": 240.0},
+    {"id": "bus-wk-08", "operator": "freshbus", "direction": "Kochi→Bengaluru", "departure_time": "18:05", "priority": 2, "max_range_km": 240.0},
+    {"id": "bus-wk-09", "operator": "flixbus", "direction": "Kochi→Bengaluru", "departure_time": "18:20", "priority": 1, "max_range_km": 240.0},
+    {"id": "bus-wk-10", "operator": "kpn", "direction": "Kochi→Bengaluru", "departure_time": "18:40", "priority": 3, "max_range_km": 240.0}
+  ],
+  "weights": {
+    "individual": 1.5,
+    "operator": 1.0,
+    "overall": 2.0
+  },
+  "charging_duration_mins": 25.0,
+  "travel_speed_kmh": 60.0
+}

@@ -20,21 +20,35 @@ def format_mins_to_time(mins: int) -> str:
 
 def get_route_nodes(route: Route, direction: str) -> List[str]:
     """Get the sequence of nodes along the route based on the travel direction."""
-    # Build the path from segments.
-    # Bengaluru -> Kochi: Bengaluru, A, B, C, D, Kochi
-    # Kochi -> Bengaluru: Kochi, D, C, B, A, Bengaluru
-    if "Bengaluru→Kochi" in direction or direction.lower().startswith("b"):
-        return ["Bengaluru", "A", "B", "C", "D", "Kochi"]
-    elif "Kochi→Bengaluru" in direction or direction.lower().startswith("k"):
-        return ["Kochi", "D", "C", "B", "A", "Bengaluru"]
-    else:
-        # Generic fallback
-        nodes = []
-        for seg in route.segments:
-            if not nodes:
-                nodes.append(seg.from_node)
-            nodes.append(seg.to_node)
-        return nodes
+    # Build the default forward sequence from the segments order
+    forward_nodes = []
+    for seg in route.segments:
+        if not forward_nodes:
+            forward_nodes.append(seg.from_node)
+        if seg.to_node not in forward_nodes:
+            forward_nodes.append(seg.to_node)
+            
+    if not forward_nodes:
+        return []
+        
+    start_node = forward_nodes[0]
+    end_node = forward_nodes[-1]
+    
+    # Check if direction indicates reverse travel.
+    direction_lower = direction.lower()
+    start_lower = start_node.lower()
+    end_lower = end_node.lower()
+    
+    is_reverse = False
+    if end_lower in direction_lower and start_lower in direction_lower:
+        if direction_lower.find(end_lower) < direction_lower.find(start_lower):
+            is_reverse = True
+    elif direction_lower.startswith(end_lower) or direction_lower.endswith(start_lower) or "←" in direction or "<-" in direction:
+        is_reverse = True
+        
+    if is_reverse:
+        return list(reversed(forward_nodes))
+    return forward_nodes
 
 def get_segment_distance(route: Route, from_node: str, to_node: str) -> float:
     """Find the distance between two nodes on the route.

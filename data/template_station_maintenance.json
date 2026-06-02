@@ -1,0 +1,99 @@
+{
+  "id": "template-station-maintenance",
+  "name": "Station B Maintenance",
+  "description": "Station B is offline (0 chargers) for maintenance. Fleet must rely on Station A and Station C.",
+  "route": {
+    "id": "route-01",
+    "name": "Bengaluru-Kochi Route",
+    "segments": [
+      {
+        "from_node": "Bengaluru",
+        "to_node": "A",
+        "distance_km": 100.0
+      },
+      {
+        "from_node": "A",
+        "to_node": "B",
+        "distance_km": 120.0
+      },
+      {
+        "from_node": "B",
+        "to_node": "C",
+        "distance_km": 100.0
+      },
+      {
+        "from_node": "C",
+        "to_node": "D",
+        "distance_km": 120.0
+      },
+      {
+        "from_node": "D",
+        "to_node": "Kochi",
+        "distance_km": 100.0
+      }
+    ]
+  },
+  "stations": [
+    {
+      "id": "A",
+      "name": "Station A",
+      "chargers_count": 1
+    },
+    {
+      "id": "B",
+      "name": "Station B (Offline)",
+      "chargers_count": 0
+    },
+    {
+      "id": "C",
+      "name": "Station C",
+      "chargers_count": 1
+    },
+    {
+      "id": "D",
+      "name": "Station D",
+      "chargers_count": 1
+    }
+  ],
+  "buses": [
+    {
+      "id": "bus-maint-01",
+      "operator": "kpn",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:00",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-maint-02",
+      "operator": "freshbus",
+      "direction": "Bengaluru\u2192Kochi",
+      "departure_time": "19:20",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-maint-03",
+      "operator": "flixbus",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:10",
+      "priority": 1,
+      "max_range_km": 240.0
+    },
+    {
+      "id": "bus-maint-04",
+      "operator": "kpn",
+      "direction": "Kochi\u2192Bengaluru",
+      "departure_time": "19:30",
+      "priority": 1,
+      "max_range_km": 240.0
+    }
+  ],
+  "weights": {
+    "individual": 1.0,
+    "operator": 1.0,
+    "overall": 1.0
+  },
+  "charging_duration_mins": 25.0,
+  "travel_speed_kmh": 60.0
+}

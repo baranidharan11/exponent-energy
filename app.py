@@ -371,8 +371,7 @@ with tab1:
         ])
         st.table(route_df)
 
-        with st.expander("🔍 View Raw Scenario Input JSON"):
-            st.json(base_scenario.model_dump())
+
 
     with col2:
         st.markdown("### 📋 Bus Dispatch Schedule")
